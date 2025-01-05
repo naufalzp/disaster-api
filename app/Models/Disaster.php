@@ -12,6 +12,7 @@ class Disaster extends Model
         'severity',
         'time',
         'date',
+        'created_by',
     ];
 
     /**
