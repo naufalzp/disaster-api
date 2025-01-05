@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the disaster records associated with the user.
+     */
+    public function disasters()
+    {
+        return $this->hasMany(Disaster::class, 'created_by');
+    }
 }
