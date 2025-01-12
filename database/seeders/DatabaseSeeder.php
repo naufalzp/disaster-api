@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,5 +18,17 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             DisasterSeeder::class,
         ]);
+
+        
+        $this->command->info('Database seeded successfully.');
+
+        $parameters = [
+            '--personal' => true,
+            '--name' => 'SimpleLMS Personal Access Client',
+        ];
+
+        Artisan::call('passport:client', $parameters);
+
+        $this->command->info('Personal access client created successfully.');
     }
 }
