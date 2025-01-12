@@ -65,10 +65,10 @@ class DisasterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  string $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(int $id)
+    public function show(string $id)
     {
         $disaster = Disaster::find($id);
 
@@ -92,10 +92,10 @@ class DisasterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int $id
+     * @param  string $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, int $id)
+    public function update(Request $request, string $id)
     {
         $disaster = Disaster::find($id);
         
@@ -143,10 +143,10 @@ class DisasterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Request $request ,int $id)
+    public function destroy(Request $request ,string $id)
     {
         $disaster = Disaster::find($id);
 
